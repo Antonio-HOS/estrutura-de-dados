@@ -1,30 +1,13 @@
 //espero que goste do codigo
 #include <stdio.h>
 #include <stdlib.h>
+#include "./biblioteca.h"
 
-typedef struct Intervalos
-{
-    int inicio;
-    int fim;
-    struct Intervalos *proximo;
-
-} Intervalos;
 
 void adicionarIntervalo(Intervalos **cabeca, int inicio, int fim);
 void verificarPonto(Intervalos **x, int ponto);
 
-void printLista(Intervalos *head)
-{
-    Intervalos *aux = head;
-    while (aux != NULL)
-    {
-        printf("inicio %d  ", aux->inicio);
-        printf("fim %d \n", aux->fim);
-
-        aux = aux->proximo;
-    }
-    printf("NULL\n");
-}
+void printLista(Intervalos *head);
 
 int main()
 {
@@ -142,4 +125,17 @@ void verificarPonto(Intervalos **cabeca, int ponto)
     {
         printf("Fora de todos os intervalos\n\n");
     }
+}
+
+void printLista(Intervalos *head)
+{
+    Intervalos *aux = head;
+    while (aux != NULL)
+    {
+        printf("inicio %d  ", aux->inicio);
+        printf("fim %d \n", aux->fim);
+
+        aux = aux->proximo;
+    }
+    printf("fim\n");
 }
